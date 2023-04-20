@@ -60,7 +60,7 @@ async def start_services():
     print('-------------------- Initalizing Web Server -------------------------')
     app = web.AppRunner(await web_server())
     await app.setup()
-    bind_address = "filr-2-link-proo.onrender.com" if Var.ON_HEROKU else Var.BIND_ADRESS
+    bind_address = "https://filr-2-link-proo.onrender.com" if Var.ON_HEROKU else Var.BIND_ADRESS
     await web.TCPSite(app, bind_address, Var.PORT).start()
     print('----------------------------- DONE ---------------------------------------------------------------------')
     print('\n')
